@@ -8,7 +8,7 @@ os.makedirs(SAVE_DIR, exist_ok=True)
 
 app = FastAPI()
 
-@app.post("/")
+@app.post("/save")
 async def save_text(request: Request):
     data = await request.json()
     text = data.get("text", "")
