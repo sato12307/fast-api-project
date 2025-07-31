@@ -37,6 +37,10 @@ async def save_text(data: TextData):
         filename = f"{uuid.uuid4()}.txt"
         text = data.content
 
+
+         #✅ str → bytes に変換（Supabaseが期待する形式）
+        text_bytes = BytesIO(text.encode("utf-8"))
+
         # Supabaseにアップロード
         res = supabase.storage.from_("mental-library").upload(
             filename, text, {"content-type": "text/plain"}
