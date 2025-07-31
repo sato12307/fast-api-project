@@ -6,6 +6,7 @@ import uuid
 import os
 
 # Supabase 認証情報（環境変数から取得）
+#こんにちは
 SUPABASE_URL = os.environ.get("SUPABASE_URL")
 SUPABASE_KEY = os.environ.get("SUPABASE_KEY")
 
