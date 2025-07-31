@@ -7,6 +7,10 @@ from uuid import uuid4
 app = FastAPI()
 
 SUPABASE_URL = os.environ.get("SUPABASE_URL")
+if not SUPABASE_URL.endswith("/"):
+    SUPABASE_URL += "/"
+
+public_url = f"{SUPABASE_URL}storage/v1/object/public/mental-library/{filename}"
 SUPABASE_KEY = os.environ.get("SUPABASE_KEY")
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
